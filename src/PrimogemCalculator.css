@@ -1,0 +1,188 @@
+.pc-page {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #0b2236 0%, #123349 55%, #0b2236 100%);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 48px 16px;
+  font-family: "Georgia", "Times New Roman", serif;
+  position: relative;
+}
+
+.pc-curtain-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: linear-gradient(90deg, #c98a3e, #e8c27a, #c98a3e);
+}
+
+.pc-card {
+  width: 100%;
+  max-width: 560px;
+  background: #0f2a40;
+  border: 1px solid #2b5876;
+  border-radius: 14px;
+  padding: 32px 28px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+  color: #eaf2f8;
+}
+
+.pc-eyebrow {
+  margin: 0;
+  font-size: 12px;
+  letter-spacing: 3px;
+  color: #e8c27a;
+  font-family: "Trebuchet MS", sans-serif;
+}
+
+.pc-title {
+  margin: 6px 0 4px;
+  font-size: 32px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.pc-subtitle {
+  margin: 0 0 24px;
+  color: #9fc1d6;
+  font-family: "Trebuchet MS", sans-serif;
+  font-size: 14px;
+}
+
+.pc-section {
+  margin-bottom: 22px;
+}
+
+.pc-section-title {
+  font-size: 13px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #7fb6d9;
+  font-family: "Trebuchet MS", sans-serif;
+  margin-bottom: 10px;
+}
+
+.pc-grid3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+}
+
+@media (max-width: 480px) {
+  .pc-grid3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+.pc-field-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.pc-field-label {
+  font-size: 12px;
+  color: #9fc1d6;
+  font-family: "Trebuchet MS", sans-serif;
+}
+
+.pc-field-input,
+.pc-date-input {
+  background: #0b2236;
+  border: 1px solid #2b5876;
+  border-radius: 8px;
+  padding: 10px 12px;
+  color: #fff;
+  font-size: 15px;
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.pc-field-input:focus,
+.pc-date-input:focus {
+  border-color: #e8c27a;
+}
+
+.pc-check-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.pc-check-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: "Trebuchet MS", sans-serif;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.pc-checkbox {
+  width: 16px;
+  height: 16px;
+}
+
+.pc-check-icon {
+  font-size: 14px;
+}
+
+.pc-error-text {
+  color: #e89a9a;
+  font-size: 13px;
+  font-family: "Trebuchet MS", sans-serif;
+}
+
+.pc-result-box {
+  background: #0b2236;
+  border: 1px solid #2b5876;
+  border-radius: 10px;
+  padding: 18px 18px 14px;
+  margin-top: 8px;
+}
+
+.pc-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 0;
+  font-family: "Trebuchet MS", sans-serif;
+  font-size: 14px;
+}
+
+.pc-row-label {
+  color: #9fc1d6;
+}
+
+.pc-row-value {
+  color: #fff;
+  font-weight: 600;
+}
+
+.pc-row-label-big {
+  color: #e8c27a;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.pc-row-value-big {
+  color: #e8c27a;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.pc-divider {
+  height: 1px;
+  background: #2b5876;
+  margin: 10px 0;
+}
+
+.pc-note {
+  margin-top: 10px;
+  font-size: 11px;
+  color: #6f93ab;
+  font-family: "Trebuchet MS", sans-serif;
+  line-height: 1.5;
+}
