@@ -115,13 +115,28 @@ export default function PrimogemCalculator() {
     <div className="pc-page">
       <div className="pc-curtain-top" />
       <main className="pc-card">
+        <div className="pc-corners" aria-hidden="true">
+          <i />
+          <i />
+          <i />
+          <i />
+        </div>
         <header className="pc-header">
-          <div>
-            <p className="pc-eyebrow">✦ FONTAINE TREASURY</p>
-            <h1 className="pc-title">Primogem Forecast</h1>
-            <p className="pc-subtitle">
-              Hitung berapa pull yang akan kamu punya sampai tanggal tertentu.
-            </p>
+          <div className="pc-header-main">
+            <img
+              className="pc-medallion"
+              src="/img/furinaicon.png"
+              alt=""
+              width="64"
+              height="64"
+            />
+            <div>
+              <p className="pc-eyebrow">✦ FONTAINE TREASURY ✦</p>
+              <h1 className="pc-title">Primogem Forecast</h1>
+              <p className="pc-subtitle">
+                Hitung berapa pull yang akan kamu punya sampai tanggal tertentu.
+              </p>
+            </div>
           </div>
           {isDirty && (
             <button type="button" className="pc-reset-btn" onClick={resetAll}>
@@ -133,7 +148,7 @@ export default function PrimogemCalculator() {
         {/* ---------- 1. Resource sekarang ---------- */}
         <section className="pc-section">
           <h2 className="pc-section-title">
-            <span className="pc-step">1</span> Yang kamu punya sekarang
+            <span className="pc-step"><span>1</span></span> Yang kamu punya sekarang
           </h2>
           <div className="pc-grid3">
             <Field
@@ -172,7 +187,7 @@ export default function PrimogemCalculator() {
         {/* ---------- 2. Sumber primogem ---------- */}
         <section className="pc-section">
           <h2 className="pc-section-title">
-            <span className="pc-step">2</span> Sumber primogem yang dihitung
+            <span className="pc-step"><span>2</span></span> Sumber primogem yang dihitung
           </h2>
           <div className="pc-check-grid">
             {SOURCES.map((s) => {
@@ -212,7 +227,7 @@ export default function PrimogemCalculator() {
         {/* ---------- 3. Tanggal target ---------- */}
         <section className="pc-section">
           <h2 className="pc-section-title">
-            <span className="pc-step">3</span> Sampai tanggal
+            <span className="pc-step"><span>3</span></span> Sampai tanggal
           </h2>
           <input
             type="date"
@@ -256,6 +271,9 @@ export default function PrimogemCalculator() {
         {result && (
           <section className="pc-result-box" aria-live="polite">
             <div className="pc-result-hero">
+              <span className="pc-result-sparkle" aria-hidden="true">
+                ✦
+              </span>
               <span className="pc-result-caption">
                 Estimasi pull · {result.targetDateLabel}
               </span>
@@ -290,7 +308,11 @@ export default function PrimogemCalculator() {
                 <div
                   className="pc-pity-fill"
                   style={{ width: `${result.pity.progress}%` }}
-                />
+                >
+                  <span className="pc-pity-star" aria-hidden="true">
+                    ✦
+                  </span>
+                </div>
               </div>
             </div>
 
