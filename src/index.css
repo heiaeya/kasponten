@@ -2,6 +2,17 @@
   box-sizing: border-box;
 }
 
+:root {
+  color-scheme: dark;
+}
+
 body {
   margin: 0;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: #e8c27a;
+  color: #0b2236;
 }

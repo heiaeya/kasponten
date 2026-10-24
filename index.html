@@ -2,41 +2,14 @@
 <html lang="id">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" href="/img/furinaicon.png" type="image/x-icon" />
+    <link rel="icon" href="/img/furinaicon.png" type="image/png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kasponten— Primogem Forecast</title>
-    <script>
-      window.addEventListener(
-        "error",
-        function (e) {
-          document.body.innerHTML =
-            '<pre style="color:#ffb3b3;background:#2a0e0e;white-space:pre-wrap;' +
-            'word-break:break-word;padding:20px;min-height:100vh;margin:0;' +
-            'font-family:monospace;font-size:13px;line-height:1.6;">' +
-            "GLOBAL ERROR CAUGHT:\n\n" +
-            (e.message || "(no message)") +
-            "\n\nSource: " +
-            (e.filename || "unknown") +
-            ":" +
-            (e.lineno || "?") +
-            ":" +
-            (e.colno || "?") +
-            "</pre>";
-        },
-        true
-      );
-      setTimeout(function () {
-        var root = document.getElementById("root");
-        if (root && root.innerHTML.trim() === "") {
-          var div = document.createElement("div");
-          div.style.cssText =
-            "color:#ffcc66;background:#2a1e0e;padding:20px;font-family:monospace;font-size:13px;";
-          div.textContent =
-            "⏱ Root masih kosong setelah 3 detik. Kemungkinan: script /assets/*.js gagal dimuat (404/network), atau silent error yang nggak ke-trigger window.onerror. Cek tab Network di DevTools kalau bisa.";
-          document.body.appendChild(div);
-        }
-      }, 3000);
-    </script>
+    <meta name="theme-color" content="#0b2236" />
+    <meta
+      name="description"
+      content="Kasponten — Fontaine Treasury. Hitung estimasi pull Genshin Impact yang akan kamu punya sampai tanggal tertentu, dari primogem, Genesis Crystal, Welkin, Spiral Abyss, dan Imaginarium Theater."
+    />
+    <title>Kasponten — Primogem Forecast</title>
   </head>
   <body>
     <div id="root"></div>

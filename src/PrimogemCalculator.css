@@ -1,79 +1,155 @@
+/* ============================================================
+   Kasponten — Primogem Forecast
+   Tema: Fontaine (navy + emas), satu file untuk komponen ini.
+   Warna & token ada di :root biar gampang diganti / ditambah fitur.
+   ============================================================ */
+:root {
+  --pc-bg-deep: #081b2c;
+  --pc-bg: #0b2236;
+  --pc-card: #0f2a40;
+  --pc-panel: #0b2236;
+  --pc-panel-soft: #122f47;
+  --pc-border: #2b5876;
+  --pc-border-soft: #1d435f;
+  --pc-text: #eaf2f8;
+  --pc-muted: #9fc1d6;
+  --pc-faint: #6f93ab;
+  --pc-accent: #7fb6d9;
+  --pc-gold: #e8c27a;
+  --pc-gold-deep: #c98a3e;
+  --pc-danger: #e89a9a;
+  --pc-radius: 14px;
+  --pc-font-body: "Trebuchet MS", "Segoe UI", system-ui, sans-serif;
+  --pc-font-display: Georgia, "Times New Roman", serif;
+}
+
 .pc-page {
   min-height: 100vh;
-  background: linear-gradient(180deg, #0b2236 0%, #123349 55%, #0b2236 100%);
+  min-height: 100dvh;
+  background:
+    radial-gradient(900px 480px at 50% -120px, rgba(64, 130, 175, 0.35), transparent 65%),
+    radial-gradient(700px 420px at 85% 110%, rgba(201, 138, 62, 0.12), transparent 60%),
+    linear-gradient(180deg, var(--pc-bg-deep) 0%, #123349 55%, var(--pc-bg-deep) 100%);
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  padding: 48px 16px;
-  font-family: "Georgia", "Times New Roman", serif;
+  padding: 44px 16px 56px;
+  font-family: var(--pc-font-body);
   position: relative;
 }
 
 .pc-curtain-top {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
+  inset: 0 0 auto 0;
   height: 6px;
-  background: linear-gradient(90deg, #c98a3e, #e8c27a, #c98a3e);
+  background: linear-gradient(
+    90deg,
+    var(--pc-gold-deep),
+    var(--pc-gold),
+    var(--pc-gold-deep)
+  );
 }
 
+/* ---------- Kartu utama ---------- */
 .pc-card {
   width: 100%;
-  max-width: 560px;
-  background: #0f2a40;
-  border: 1px solid #2b5876;
-  border-radius: 14px;
-  padding: 32px 28px;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
-  color: #eaf2f8;
+  max-width: 640px;
+  background: linear-gradient(180deg, #102c46 0%, var(--pc-card) 140px);
+  border: 1px solid var(--pc-border);
+  border-radius: 18px;
+  padding: 32px 28px 22px;
+  box-shadow:
+    0 24px 70px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(234, 242, 248, 0.06);
+  color: var(--pc-text);
+}
+
+/* ---------- Header ---------- */
+.pc-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
 }
 
 .pc-eyebrow {
   margin: 0;
-  font-size: 12px;
+  font-size: 11.5px;
+  font-weight: 700;
   letter-spacing: 3px;
-  color: #e8c27a;
-  font-family: "Trebuchet MS", sans-serif;
+  color: var(--pc-gold);
 }
 
 .pc-title {
   margin: 6px 0 4px;
-  font-size: 32px;
+  font-family: var(--pc-font-display);
+  font-size: 34px;
+  line-height: 1.1;
   font-weight: 700;
   color: #fff;
 }
 
 .pc-subtitle {
-  margin: 0 0 24px;
-  color: #9fc1d6;
-  font-family: "Trebuchet MS", sans-serif;
+  margin: 0;
+  color: var(--pc-muted);
   font-size: 14px;
+  line-height: 1.55;
 }
 
+.pc-reset-btn {
+  flex-shrink: 0;
+  background: transparent;
+  border: 1px solid var(--pc-border);
+  color: var(--pc-muted);
+  font: inherit;
+  font-size: 12px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+.pc-reset-btn:hover {
+  border-color: var(--pc-gold);
+  color: var(--pc-gold);
+}
+
+/* ---------- Section ---------- */
 .pc-section {
-  margin-bottom: 22px;
+  margin-top: 26px;
 }
 
 .pc-section-title {
-  font-size: 13px;
-  letter-spacing: 1.5px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 1.4px;
   text-transform: uppercase;
-  color: #7fb6d9;
-  font-family: "Trebuchet MS", sans-serif;
-  margin-bottom: 10px;
+  color: var(--pc-accent);
+  margin: 0 0 12px;
 }
 
+.pc-step {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--pc-panel-soft);
+  border: 1px solid var(--pc-border);
+  color: var(--pc-gold);
+  font-size: 11px;
+  letter-spacing: 0;
+}
+
+/* ---------- Field angka ---------- */
 .pc-grid3 {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: 10px;
-}
-
-@media (max-width: 480px) {
-  .pc-grid3 {
-    grid-template-columns: 1fr;
-  }
 }
 
 .pc-field-wrap {
@@ -84,105 +160,340 @@
 
 .pc-field-label {
   font-size: 12px;
-  color: #9fc1d6;
-  font-family: "Trebuchet MS", sans-serif;
+  font-weight: 600;
+  color: var(--pc-muted);
+}
+
+.pc-field-hint {
+  font-size: 11px;
+  color: var(--pc-faint);
 }
 
 .pc-field-input,
 .pc-date-input {
-  background: #0b2236;
-  border: 1px solid #2b5876;
-  border-radius: 8px;
-  padding: 10px 12px;
+  background: var(--pc-panel);
+  border: 1px solid var(--pc-border);
+  border-radius: 10px;
+  padding: 11px 12px;
   color: #fff;
+  font: inherit;
   font-size: 15px;
   outline: none;
   width: 100%;
-  box-sizing: border-box;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
 }
 
 .pc-field-input:focus,
 .pc-date-input:focus {
-  border-color: #e8c27a;
+  border-color: var(--pc-gold);
+  box-shadow: 0 0 0 3px rgba(232, 194, 122, 0.18);
 }
 
-.pc-check-list {
-  display: flex;
-  flex-direction: column;
+.pc-field-input::placeholder {
+  color: var(--pc-faint);
+}
+
+.pc-now-line {
+  margin: 12px 2px 0;
+  font-size: 13px;
+  color: var(--pc-muted);
+}
+
+.pc-now-line strong {
+  color: var(--pc-gold);
+}
+
+.pc-now-leftover {
+  color: var(--pc-faint);
+}
+
+/* ---------- Kartu sumber primogem ---------- */
+.pc-check-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 10px;
 }
 
 .pc-check-item {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 10px;
-  font-family: "Trebuchet MS", sans-serif;
-  font-size: 14px;
+  padding: 12px 13px;
+  background: var(--pc-panel);
+  border: 1px solid var(--pc-border-soft);
+  border-radius: var(--pc-radius);
   cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.pc-check-item:hover {
+  border-color: var(--pc-border);
+}
+
+.pc-check-item-on {
+  border-color: var(--pc-gold-deep);
+  background: linear-gradient(180deg, rgba(232, 194, 122, 0.1), rgba(232, 194, 122, 0.03));
+}
+
+.pc-check-item-disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
 }
 
 .pc-checkbox {
-  width: 16px;
-  height: 16px;
+  width: 17px;
+  height: 17px;
+  margin-top: 1px;
+  flex-shrink: 0;
+  accent-color: var(--pc-gold-deep);
+  cursor: inherit;
 }
 
 .pc-check-icon {
-  font-size: 14px;
+  font-size: 15px;
+  line-height: 1.3;
+}
+
+.pc-check-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.pc-check-label {
+  font-size: 13.5px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.pc-check-detail {
+  font-size: 11.5px;
+  color: var(--pc-faint);
+  line-height: 1.35;
+}
+
+/* ---------- Tanggal & preset ---------- */
+.pc-presets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.pc-preset {
+  background: var(--pc-panel);
+  border: 1px solid var(--pc-border-soft);
+  color: var(--pc-muted);
+  font: inherit;
+  font-size: 12.5px;
+  padding: 7px 13px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: border-color 0.15s ease, color 0.15s ease, background 0.15s ease;
+}
+
+.pc-preset:hover {
+  border-color: var(--pc-border);
+  color: var(--pc-text);
+}
+
+.pc-preset-on {
+  border-color: var(--pc-gold);
+  color: var(--pc-gold);
+  background: rgba(232, 194, 122, 0.08);
+}
+
+/* ---------- Hasil ---------- */
+.pc-empty {
+  margin-top: 26px;
+  border: 1px dashed var(--pc-border);
+  border-radius: var(--pc-radius);
+  padding: 18px;
+  text-align: center;
+  font-size: 13.5px;
+  color: var(--pc-faint);
 }
 
 .pc-error-text {
-  color: #e89a9a;
+  margin-top: 14px;
+  color: var(--pc-danger);
   font-size: 13px;
-  font-family: "Trebuchet MS", sans-serif;
 }
 
 .pc-result-box {
-  background: #0b2236;
-  border: 1px solid #2b5876;
-  border-radius: 10px;
-  padding: 18px 18px 14px;
-  margin-top: 8px;
+  background: var(--pc-panel);
+  border: 1px solid var(--pc-border);
+  border-radius: var(--pc-radius);
+  padding: 20px 18px 14px;
+  margin-top: 26px;
 }
 
+.pc-result-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 2px;
+  padding-bottom: 6px;
+}
+
+.pc-result-caption {
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  color: var(--pc-accent);
+}
+
+.pc-result-total {
+  font-family: var(--pc-font-display);
+  font-size: 52px;
+  line-height: 1.05;
+  font-weight: 800;
+  background: linear-gradient(180deg, #f7e3ae, var(--pc-gold) 55%, var(--pc-gold-deep));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.pc-result-unit {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.pc-result-sub {
+  font-size: 12.5px;
+  color: var(--pc-muted);
+  line-height: 1.5;
+}
+
+/* Bar menuju pity */
+.pc-pity {
+  margin: 14px 0 4px;
+}
+
+.pc-pity-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 12px;
+  color: var(--pc-muted);
+  margin-bottom: 7px;
+}
+
+.pc-pity-head span:last-child {
+  color: var(--pc-gold);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.pc-pity-bar {
+  height: 8px;
+  border-radius: 999px;
+  background: var(--pc-panel-soft);
+  border: 1px solid var(--pc-border-soft);
+  overflow: hidden;
+}
+
+.pc-pity-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--pc-gold-deep), var(--pc-gold));
+  transition: width 0.35s ease;
+}
+
+/* Baris breakdown */
 .pc-row {
   display: flex;
   justify-content: space-between;
+  align-items: baseline;
+  gap: 14px;
   padding: 6px 0;
-  font-family: "Trebuchet MS", sans-serif;
   font-size: 14px;
 }
 
 .pc-row-label {
-  color: #9fc1d6;
+  color: var(--pc-muted);
+}
+
+.pc-row-sub {
+  color: var(--pc-faint);
+  font-size: 12px;
 }
 
 .pc-row-value {
   color: #fff;
   font-weight: 600;
+  white-space: nowrap;
 }
 
 .pc-row-label-big {
-  color: #e8c27a;
+  color: var(--pc-gold);
   font-size: 16px;
   font-weight: 700;
 }
 
 .pc-row-value-big {
-  color: #e8c27a;
+  color: var(--pc-gold);
   font-size: 18px;
   font-weight: 800;
 }
 
 .pc-divider {
   height: 1px;
-  background: #2b5876;
+  background: var(--pc-border);
   margin: 10px 0;
 }
 
 .pc-note {
-  margin-top: 10px;
+  margin: 10px 0 4px;
   font-size: 11px;
-  color: #6f93ab;
-  font-family: "Trebuchet MS", sans-serif;
-  line-height: 1.5;
+  color: var(--pc-faint);
+  line-height: 1.6;
+}
+
+.pc-footer {
+  margin-top: 24px;
+  text-align: center;
+  font-size: 11px;
+  color: var(--pc-faint);
+}
+
+/* ---------- Responsif ---------- */
+@media (max-width: 560px) {
+  .pc-page {
+    padding: 28px 12px 40px;
+  }
+
+  .pc-card {
+    padding: 26px 18px 18px;
+  }
+
+  .pc-title {
+    font-size: 28px;
+  }
+
+  .pc-grid3 {
+    grid-template-columns: 1fr;
+  }
+
+  .pc-check-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pc-result-total {
+    font-size: 44px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pc-pity-fill,
+  .pc-check-item,
+  .pc-field-input,
+  .pc-date-input,
+  .pc-preset,
+  .pc-reset-btn {
+    transition: none;
+  }
 }
