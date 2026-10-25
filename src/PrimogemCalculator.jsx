@@ -115,12 +115,6 @@ export default function PrimogemCalculator() {
     <div className="pc-page">
       <div className="pc-curtain-top" />
       <main className="pc-card">
-        <div className="pc-corners" aria-hidden="true">
-          <i />
-          <i />
-          <i />
-          <i />
-        </div>
         <header className="pc-header">
           <div className="pc-header-main">
             <img
@@ -209,7 +203,6 @@ export default function PrimogemCalculator() {
                     disabled={disabled}
                     className="pc-checkbox"
                   />
-                  <span className="pc-check-icon">{s.icon}</span>
                   <span className="pc-check-text">
                     <span className="pc-check-label">{s.label}</span>
                     <span className="pc-check-detail">

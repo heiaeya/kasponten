@@ -30,37 +30,31 @@ export const SOURCES = [
   {
     key: "daily",
     label: "Daily Commission",
-    icon: "✦",
     detail: `${DAILY_COMMISSION_PER_DAY} primo / hari`,
   },
   {
     key: "welkin",
     label: "Blessing of the Welkin Moon",
-    icon: "🌙",
     detail: `${WELKIN_PER_DAY} primo / hari`,
   },
   {
     key: "stardust",
     label: "Stardust Exchange",
-    icon: "✨",
     detail: `${STARDUST_PULLS_PER_MONTH} pull / bulan`,
   },
   {
     key: "abyss",
     label: "Spiral Abyss",
-    icon: "🌀",
     detail: `${SPIRAL_ABYSS_PER_RESET} primo / reset · tgl 16`,
   },
   {
     key: "theater",
     label: "Imaginarium Theater",
-    icon: "🎭",
     detail: `${THEATER_PER_RESET} primo / reset · tgl 1`,
   },
   {
     key: "arcane",
     label: "Arcane Chamber",
-    icon: "🔮",
     detail: `+${ARCANE_TOTAL} primo · ${ARCANE_STAGE_COUNT} stage, ikut Theater`,
     dependsOn: "theater", // cuma aktif kalau Imaginarium Theater nyala
   },
